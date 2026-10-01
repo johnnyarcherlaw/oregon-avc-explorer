@@ -1,0 +1,86 @@
+{
+  "avc": {
+    "title": "In the Matter of Gustafson & Company, LLC",
+    "case_number": "21CV373321",
+    "execution_date": "2021-09-17",
+    "filing_date": "2021-09-17",
+    "effective_date": null,
+    "court_name": "Circuit Court of the State of Oregon",
+    "county": "Multnomah",
+    "state": "Oregon",
+    "is_multistate": false,
+    "summary": null
+  },
+
+  "respondents": [
+    {
+      "legal_name": "Gustafson & Company, LLC",
+      "normalized_name": "Gustafson & Company LLC",
+      "entity_type": "limited liability company",
+      "parent_entity": null,
+      "role": "respondent"
+    }
+  ],
+
+  "legal_authorities": [
+    {
+      "jurisdiction": "Oregon",
+      "citation": "ORS 646A.600-628",
+      "normalized_citation": "ORS 646A.600-628",
+      "description": "Oregon Consumer Information Protection Act",
+      "authority_role": "alleged_violation",
+      "source_page": 5
+    },
+    {
+      "jurisdiction": "Oregon",
+      "citation": "ORS 646.605-656",
+      "normalized_citation": "ORS 646.605-656",
+      "description": "Oregon Unlawful Trade Practices Act",
+      "authority_role": "alleged_violation",
+      "source_page": 5
+    },
+    {
+      "jurisdiction": "Oregon",
+      "citation": "ORS 646.632(2)",
+      "normalized_citation": "ORS 646.632(2)",
+      "description": "Authority for Assurance of Voluntary Compliance",
+      "authority_role": "settlement_authority",
+      "source_page": 1
+    }
+  ],
+
+  "financial_provisions": [
+    {
+      "amount": 50000,
+      "relief_type": "payment to state",
+      "recipient": "Oregon Department of Justice",
+      "jurisdiction": "Oregon",
+      "description": "Payment deposited into the Department of Justice account established pursuant to ORS 180.095 and used by Oregon DOJ as allowed by law.",
+      "source_page": 10
+    }
+  ],
+
+  "document": {
+    "document_type": "AVC",
+    "source_url": "https://www.doj.state.or.us/wp-content/uploads/2021/10/AVC_Gustafson_and_Company_LLC_2021.pdf",
+    "local_filename": "2021_gustafson_avc.pdf",
+    "publisher": "Oregon Department of Justice"
+  },
+
+  "categories": [
+    {
+      "name": "Data Privacy and Security",
+      "category_type": "subject_matter",
+      "classification_method": "manual",
+      "confidence": 1.0,
+      "verified": true
+    },
+    {
+      "name": "Accounting",
+      "category_type": "industry",
+      "classification_method": "manual",
+      "confidence": 1.0,
+      "verified": true
+    }
+  ]
+}

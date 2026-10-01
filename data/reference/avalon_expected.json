@@ -1,0 +1,105 @@
+{
+  "avc": {
+    "title": "In the Matter of Avalon Healthcare Management, Inc.",
+    "case_number": null,
+    "execution_date": "2022-12-05",
+    "filing_date": "2022-12-22",
+    "effective_date": "2022-12-05",
+    "court_name": "Circuit Court of the State of Oregon",
+    "county": "Multnomah",
+    "state": "Oregon",
+    "is_multistate": true,
+    "summary": null
+  },
+
+  "respondents": [
+    {
+      "legal_name": "Avalon Healthcare Management, Inc.",
+      "normalized_name": "Avalon Healthcare Management Inc",
+      "entity_type": "corporation",
+      "parent_entity": null,
+      "role": "respondent"
+    }
+  ],
+
+  "legal_authorities": [
+    {
+      "jurisdiction": "Oregon",
+      "citation": "ORS 646.605–646.656",
+      "normalized_citation": "ORS 646.605-646.656",
+      "description": "Oregon Unlawful Trade Practices Act",
+      "source_page": 1
+    },
+    {
+      "jurisdiction": "Oregon",
+      "citation": "ORS 646.632",
+      "normalized_citation": "ORS 646.632",
+      "description": "Authority governing assurances of voluntary compliance",
+      "source_page": 2
+    },
+    {
+      "jurisdiction": "Oregon",
+      "citation": "ORS 646A.600 et seq.",
+      "normalized_citation": "ORS 646A.600 et seq.",
+      "description": "Oregon data breach notification law",
+      "source_page": 3
+    },
+    {
+      "jurisdiction": "Utah",
+      "citation": "Utah Code § 13-44-201",
+      "normalized_citation": "Utah Code 13-44-201",
+      "description": null,
+      "source_page": 2
+    },
+    {
+      "jurisdiction": "Utah",
+      "citation": "Utah Code § 13-44-202",
+      "normalized_citation": "Utah Code 13-44-202",
+      "description": "Utah data breach notification law",
+      "source_page": 3
+    }
+  ],
+
+  "financial_provisions": [
+    {
+      "amount": 200000,
+      "relief_type": "payment to states",
+      "recipient": "Attorneys General of Oregon and Utah",
+      "jurisdiction": "Multistate",
+      "description": "Total payment required by the Assurance.",
+      "source_page": 11
+    },
+    {
+      "amount": 100000,
+      "relief_type": "Oregon allocation",
+      "recipient": "Oregon Attorney General",
+      "jurisdiction": "Oregon",
+      "description": "Oregon's allocation of the total payment. Permitted uses include attorneys' fees, investigation and litigation costs, consumer protection or privacy enforcement, consumer education or redress, and other uses permitted by state law.",
+      "source_page": 11
+    }
+  ],
+
+  "document": {
+    "document_type": "AVC",
+    "source_url": "https://www.doj.state.or.us/wp-content/uploads/2022/12/AVC_Avalon_2022.pdf",
+    "local_filename": "2022_avalon_avc.pdf",
+    "publisher": "Oregon Department of Justice"
+  },
+
+  "categories": [
+    {
+      "name": "Data Privacy and Security",
+      "category_type": "subject_matter",
+      "classification_method": "manual",
+      "confidence": 1.0,
+      "verified": true
+    },
+    {
+      "name": "Healthcare",
+      "category_type": "industry",
+      "classification_method": "manual",
+      "confidence": 1.0,
+      "verified": true
+    }
+  ]
+}

@@ -1,0 +1,118 @@
+{
+  "avc": {
+    "title": "In the Matter of Omnicare Inc.",
+    "case_number": "1012-17196",
+    "execution_date": "2010-12-01",
+    "filing_date": "2010-12-08",
+    "effective_date": "2010-12-01",
+    "court_name": "Circuit Court of the State of Oregon",
+    "county": "Multnomah",
+    "state": "Oregon",
+    "is_multistate": false,
+    "summary": null
+  },
+
+  "respondents": [
+    {
+      "legal_name": "Omnicare Inc.",
+      "normalized_name": "Omnicare Inc",
+      "entity_type": "corporation",
+      "parent_entity": null,
+      "role": "respondent"
+    }
+  ],
+
+  "legal_authorities": [
+    {
+      "jurisdiction": "Oregon",
+      "citation": "ORS 646.632",
+      "normalized_citation": "ORS 646.632",
+      "description": "Authority for Assurance of Voluntary Compliance",
+      "authority_role": "settlement_authority",
+      "source_page": 1
+    },
+    {
+      "jurisdiction": "Oregon",
+      "citation": "ORS 646.632(2)",
+      "normalized_citation": "ORS 646.632(2)",
+      "description": "Assurance of Voluntary Compliance filing and enforcement provision",
+      "authority_role": "referenced_law",
+      "source_page": 1
+    },
+    {
+      "jurisdiction": "Oregon",
+      "citation": "ORS 646.632(4)",
+      "normalized_citation": "ORS 646.632(4)",
+      "description": "Enforcement authority for violation of AVC terms",
+      "authority_role": "referenced_law",
+      "source_page": 3
+    },
+    {
+      "jurisdiction": "Oregon",
+      "citation": "ORS 646.642(1)",
+      "normalized_citation": "ORS 646.642(1)",
+      "description": "Referenced enforcement provision",
+      "authority_role": "referenced_law",
+      "source_page": 3
+    },
+    {
+      "jurisdiction": "Oregon",
+      "citation": "ORS 646.642(2)",
+      "normalized_citation": "ORS 646.642(2)",
+      "description": "Referenced enforcement provision",
+      "authority_role": "referenced_law",
+      "source_page": 3
+    },
+    {
+      "jurisdiction": "Oregon",
+      "citation": "42 C.F.R. § 483.60(c)",
+      "normalized_citation": "42 CFR 483.60(c)",
+      "description": "Federal provision referenced in definition of consultant pharmacist",
+      "authority_role": "referenced_law",
+      "source_page": 3
+    },
+    {
+      "jurisdiction": "Oregon",
+      "citation": "ORS 646.605 et seq.",
+      "normalized_citation": "ORS 646.605 et seq.",
+      "description": "Oregon Unlawful Trade Practices Act provisions referenced in the scope of released claims",
+      "authority_role": "referenced_law",
+      "source_page": 5
+    }
+  ],
+
+  "financial_provisions": [
+    {
+      "amount": 300000,
+      "relief_type": "payment to state",
+      "recipient": "Oregon Department of Justice",
+      "jurisdiction": "Oregon",
+      "description": "Payment required within ten days of court acceptance for deposit into the Department of Justice Account established pursuant to ORS 180.095.",
+      "source_page": 4
+    }
+  ],
+
+  "document": {
+    "document_type": "AVC",
+    "source_url": "https://www.doj.state.or.us/wp-content/uploads/2017/06/12810_filed_omnicare_avc.pdf",
+    "local_filename": "2010_omnicare_avc.pdf",
+    "publisher": "Oregon Department of Justice"
+  },
+
+  "categories": [
+    {
+      "name": "Prescription Drug Practices",
+      "category_type": "subject_matter",
+      "classification_method": "manual",
+      "confidence": 1.0,
+      "verified": true
+    },
+    {
+      "name": "Healthcare and Pharmacy",
+      "category_type": "industry",
+      "classification_method": "manual",
+      "confidence": 1.0,
+      "verified": true
+    }
+  ]
+}

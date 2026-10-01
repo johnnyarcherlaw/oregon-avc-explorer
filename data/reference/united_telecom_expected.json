@@ -1,0 +1,126 @@
+{
+  "avc": {
+    "title": "In the Matter of United Telecom, Inc.",
+    "case_number": "11C16840",
+    "execution_date": "2011-05-11",
+    "filing_date": "2011-06-08",
+    "effective_date": "2011-05-11",
+    "court_name": "Circuit Court of the State of Oregon",
+    "county": "Marion",
+    "state": "Oregon",
+    "is_multistate": false,
+    "summary": null
+  },
+
+  "respondents": [
+    {
+      "legal_name": "United Telecom, Inc.",
+      "normalized_name": "United Telecom Inc",
+      "entity_type": "corporation",
+      "parent_entity": null,
+      "role": "respondent"
+    }
+  ],
+
+  "legal_authorities": [
+    {
+      "jurisdiction": "Oregon",
+      "citation": "ORS 646.632(2)",
+      "normalized_citation": "ORS 646.632(2)",
+      "description": "Authority for Assurance of Voluntary Compliance",
+      "authority_role": "settlement_authority",
+      "source_page": 1
+    },
+    {
+      "jurisdiction": "Oregon",
+      "citation": "ORS 646.605-646.656",
+      "normalized_citation": "ORS 646.605-646.656",
+      "description": "Oregon Unlawful Trade Practices Act",
+      "authority_role": "referenced_law",
+      "source_page": 4
+    },
+    {
+      "jurisdiction": "Oregon",
+      "citation": "ORS 646.632(4)",
+      "normalized_citation": "ORS 646.632(4)",
+      "description": "Enforcement authority for violation of AVC terms",
+      "authority_role": "referenced_law",
+      "source_page": 3
+    },
+    {
+      "jurisdiction": "Oregon",
+      "citation": "ORS 646.642(1)",
+      "normalized_citation": "ORS 646.642(1)",
+      "description": "Referenced enforcement provision",
+      "authority_role": "referenced_law",
+      "source_page": 3
+    },
+    {
+      "jurisdiction": "Oregon",
+      "citation": "ORS 646.642(2)",
+      "normalized_citation": "ORS 646.642(2)",
+      "description": "Referenced enforcement provision",
+      "authority_role": "referenced_law",
+      "source_page": 3
+    },
+    {
+      "jurisdiction": "Oregon",
+      "citation": "ORS 646.605(10)",
+      "normalized_citation": "ORS 646.605(10)",
+      "description": "Definition of willful",
+      "authority_role": "referenced_law",
+      "source_page": 7
+    }
+  ],
+
+  "financial_provisions": [
+    {
+      "amount": 12000,
+      "relief_type": "total payment obligation",
+      "recipient": "Oregon Department of Justice",
+      "jurisdiction": "Oregon",
+      "description": "Total monetary obligation stated in the AVC, of which $8,750 is suspended subject to compliance.",
+      "source_page": 4
+    },
+    {
+      "amount": 3250,
+      "relief_type": "immediate payment",
+      "recipient": "Oregon Department of Justice",
+      "jurisdiction": "Oregon",
+      "description": "Amount payable immediately upon respondent's execution and submission of the AVC.",
+      "source_page": 4
+    },
+    {
+      "amount": 8750,
+      "relief_type": "suspended payment",
+      "recipient": "Oregon Department of Justice",
+      "jurisdiction": "Oregon",
+      "description": "Remaining portion of the $12,000 obligation suspended so long as respondent fully complies with the AVC.",
+      "source_page": 4
+    }
+  ],
+
+  "document": {
+    "document_type": "AVC",
+    "source_url": "https://www.doj.state.or.us/wp-content/uploads/2017/06/united_telecom_filed_avc_060811.pdf",
+    "local_filename": "2011_united_telecom_avc.pdf",
+    "publisher": "Oregon Department of Justice"
+  },
+
+  "categories": [
+    {
+      "name": "Telecommunications",
+      "category_type": "industry",
+      "classification_method": "manual",
+      "confidence": 1.0,
+      "verified": true
+    },
+    {
+      "name": "Billing and Charges",
+      "category_type": "subject_matter",
+      "classification_method": "manual",
+      "confidence": 1.0,
+      "verified": true
+    }
+  ]
+}

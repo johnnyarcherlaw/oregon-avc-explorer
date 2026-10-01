@@ -1,0 +1,117 @@
+{
+  "avc": {
+    "title": "In the Matter of TracFone Wireless, Inc., Cellco Partnership, d/b/a Verizon Wireless",
+    "case_number": "24CV22888",
+    "execution_date": "2024-05-09",
+    "filing_date": "2024-05-09",
+    "effective_date": "2024-05-09",
+    "court_name": "Circuit Court of the State of Oregon",
+    "county": "Multnomah",
+    "state": "Oregon",
+    "is_multistate": true,
+    "summary": null
+  },
+
+  "respondents": [
+    {
+      "legal_name": "TracFone Wireless, Inc.",
+      "normalized_name": "TracFone Wireless Inc",
+      "entity_type": "corporation",
+      "parent_entity": null,
+      "role": "respondent"
+    },
+    {
+      "legal_name": "Cellco Partnership, d/b/a Verizon Wireless",
+      "normalized_name": "Cellco Partnership dba Verizon Wireless",
+      "entity_type": "partnership",
+      "parent_entity": null,
+      "role": "respondent"
+    }
+  ],
+
+  "legal_authorities": [
+    {
+      "jurisdiction": "Oregon",
+      "citation": "ORS 646.608(1)(b)",
+      "normalized_citation": "ORS 646.608(1)(b)",
+      "description": "Oregon Unlawful Trade Practices Act",
+      "authority_role": "investigated_consumer_statute",
+      "source_page": 2
+    },
+    {
+      "jurisdiction": "Oregon",
+      "citation": "ORS 646.608(1)(c)",
+      "normalized_citation": "ORS 646.608(1)(c)",
+      "description": "Oregon Unlawful Trade Practices Act",
+      "authority_role": "investigated_consumer_statute",
+      "source_page": 2
+    },
+    {
+      "jurisdiction": "Oregon",
+      "citation": "ORS 646.608(1)(e)",
+      "normalized_citation": "ORS 646.608(1)(e)",
+      "description": "Oregon Unlawful Trade Practices Act",
+      "authority_role": "investigated_consumer_statute",
+      "source_page": 2
+    },
+    {
+      "jurisdiction": "Oregon",
+      "citation": "ORS 646.608(1)(s)",
+      "normalized_citation": "ORS 646.608(1)(s)",
+      "description": "Oregon Unlawful Trade Practices Act",
+      "authority_role": "investigated_consumer_statute",
+      "source_page": 2
+    },
+    {
+      "jurisdiction": "Oregon",
+      "citation": "ORS 646.632",
+      "normalized_citation": "ORS 646.632",
+      "description": "Authority for Assurance of Voluntary Compliance",
+      "authority_role": "settlement_authority",
+      "source_page": 4
+    }
+  ],
+
+  "financial_provisions": [
+    {
+      "amount": 4089654,
+      "relief_type": "payment to participating states",
+      "recipient": "Participating Attorneys General",
+      "jurisdiction": "Multistate",
+      "description": "Total payment required by Paragraph 35.",
+      "source_page": 12
+    },
+    {
+      "amount": 145446.97,
+      "relief_type": "Oregon allocation",
+      "recipient": "Oregon Attorney General",
+      "jurisdiction": "Oregon",
+      "description": "Oregon's allocation of the multistate payment.",
+      "source_page": 12
+    }
+  ],
+
+  "document": {
+    "document_type": "AVC",
+    "source_url": "https://www.doj.state.or.us/wp-content/uploads/2024/05/Verizon-AVC-ACCEPTED-20240509.pdf",
+    "local_filename": "2024_verizon_tracfone_avc.pdf",
+    "publisher": "Oregon Department of Justice"
+  },
+
+  "categories": [
+    {
+      "name": "Advertising and Marketing",
+      "category_type": "subject_matter",
+      "classification_method": "manual",
+      "confidence": 1.0,
+      "verified": true
+    },
+    {
+      "name": "Wireless Telecommunications",
+      "category_type": "industry",
+      "classification_method": "manual",
+      "confidence": 1.0,
+      "verified": true
+    }
+  ]
+}
