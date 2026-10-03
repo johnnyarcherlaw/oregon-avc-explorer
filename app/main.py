@@ -4,6 +4,8 @@ from fastapi.templating import Jinja2Templates
 
 from app.database import get_connection
 
+import re
+
 
 app = FastAPI(
     title="Oregon AVC Explorer",
@@ -20,6 +22,66 @@ app.mount(
 templates = Jinja2Templates(
     directory="app/templates"
 )
+
+
+def get_statute_url(citation):
+    if not citation:
+        return None
+
+    # Only link individual Oregon Revised Statutes sections.
+    # Ranges stay unlinked for now.
+    if not citation.startswith("ORS ") or "-" in citation or "–" in citation:
+        return None
+
+    match = re.search(r"ORS\s+(\d+[A-Z]?\.\d+)", citation)
+
+    if not match:
+        return None
+
+    section = match.group(1)
+
+    return f"https://oregon.public.law/statutes/ors_{section}"
+
+
+def format_avc_citation(avc, source_page):
+    title = avc["title"]
+
+    date = (
+        avc["execution_date"]
+        or avc["filing_date"]
+        or avc["effective_date"]
+    )
+
+    if date:
+        year, month, day = date.split("-")
+
+        months = [
+            "",
+            "Jan.",
+            "Feb.",
+            "Mar.",
+            "Apr.",
+            "May",
+            "June",
+            "July",
+            "Aug.",
+            "Sept.",
+            "Oct.",
+            "Nov.",
+            "Dec.",
+        ]
+
+        formatted_date = f"{months[int(month)]} {int(day)}, {year}"
+        date_part = f" {formatted_date}"
+    else:
+        date_part = ""
+
+    page_part = f" {source_page}" if source_page else ""
+
+    return (
+        f"{title}, Assurance of Voluntary Compliance"
+        f"{page_part} (Or. Dep't of Just.{date_part})."
+    )
 
 
 @app.get("/")
@@ -114,6 +176,8 @@ def search(
             "results": results,
         },
     )
+
+
 @app.get("/avcs/{avc_id}")
 def avc_detail(
     request: Request,
@@ -174,6 +238,22 @@ def avc_detail(
             """,
             (avc_id,),
         ).fetchall()
+
+        authorities = [
+            dict(authority)
+            for authority in authorities
+        ]
+
+        for authority in authorities:
+            authority["statute_url"] = get_statute_url(
+                authority["normalized_citation"]
+                or authority["citation"]
+            )
+
+            authority["bluebook_citation"] = format_avc_citation(
+                avc,
+                authority["source_page"],
+            )
 
         financial_provisions = connection.execute(
             """

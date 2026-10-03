@@ -119,8 +119,15 @@
         <article class="authority">
 
             <h3>
-                {{ authority.normalized_citation
-                   or authority.citation }}
+                {% if authority.statute_url %}
+                    <a href="{{ authority.statute_url }}"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        {{ authority.normalized_citation or authority.citation }}
+                    </a>
+                {% else %}
+                    {{ authority.normalized_citation or authority.citation }}
+                {% endif %}
             </h3>
 
             {% if authority.authority_role %}
@@ -140,11 +147,18 @@
             </p>
             {% endif %}
 
-            {% if authority.source_page %}
             <p>
-                Source page {{ authority.source_page }}
+                <strong>Source:</strong>
+                {% if documents %}
+                    <a href="{{ documents[0].source_url }}#page={{ authority.source_page }}"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        {{ authority.bluebook_citation }}
+                    </a>
+                {% else %}
+                    {{ authority.bluebook_citation }}
+                {% endif %}
             </p>
-            {% endif %}
 
         </article>
 
@@ -243,7 +257,9 @@
     <ul>
         {% for document in documents %}
         <li>
-            <a href="{{ document.source_url }}">
+            <a href="{{ document.source_url }}"
+               target="_blank"
+               rel="noopener noreferrer">
                 View original {{ document.document_type }}
             </a>
 
