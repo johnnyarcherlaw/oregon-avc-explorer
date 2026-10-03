@@ -74,31 +74,40 @@
   ],
 
   "financial_provisions": [
-    {
-      "amount": 12000,
-      "relief_type": "total payment obligation",
-      "recipient": "Oregon Department of Justice",
-      "jurisdiction": "Oregon",
-      "description": "Total monetary obligation stated in the AVC, of which $8,750 is suspended subject to compliance.",
-      "source_page": 4
-    },
-    {
-      "amount": 3250,
-      "relief_type": "immediate payment",
-      "recipient": "Oregon Department of Justice",
-      "jurisdiction": "Oregon",
-      "description": "Amount payable immediately upon respondent's execution and submission of the AVC.",
-      "source_page": 4
-    },
-    {
-      "amount": 8750,
-      "relief_type": "suspended payment",
-      "recipient": "Oregon Department of Justice",
-      "jurisdiction": "Oregon",
-      "description": "Remaining portion of the $12,000 obligation suspended so long as respondent fully complies with the AVC.",
-      "source_page": 4
-    }
-  ],
+  {
+    "fixture_id": "total_obligation",
+    "amount": 12000,
+    "relief_type": "total payment obligation",
+    "payment_status": "required",
+    "parent_fixture_id": null,
+    "recipient": "Oregon Department of Justice",
+    "jurisdiction": "Oregon",
+    "description": "Total monetary obligation stated in the AVC, of which $8,750 is suspended subject to compliance.",
+    "source_page": 4
+  },
+  {
+    "fixture_id": "immediate_payment",
+    "amount": 3250,
+    "relief_type": "immediate payment",
+    "payment_status": "immediate",
+    "parent_fixture_id": "total_obligation",
+    "recipient": "Oregon Department of Justice",
+    "jurisdiction": "Oregon",
+    "description": "Amount payable immediately upon respondent's execution and submission of the AVC.",
+    "source_page": 4
+  },
+  {
+    "fixture_id": "suspended_payment",
+    "amount": 8750,
+    "relief_type": "suspended payment",
+    "payment_status": "suspended",
+    "parent_fixture_id": "total_obligation",
+    "recipient": "Oregon Department of Justice",
+    "jurisdiction": "Oregon",
+    "description": "Remaining portion of the $12,000 obligation suspended so long as respondent fully complies with the AVC.",
+    "source_page": 4
+  }
+],
 
   "document": {
     "document_type": "AVC",

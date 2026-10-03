@@ -65,24 +65,30 @@
     }
   ],
 
-  "financial_provisions": [
-    {
-      "amount": 200000,
-      "relief_type": "payment to states",
-      "recipient": "Attorneys General of Oregon and Utah",
-      "jurisdiction": "Multistate",
-      "description": "Total payment required by the Assurance.",
-      "source_page": 11
-    },
-    {
-      "amount": 100000,
-      "relief_type": "Oregon allocation",
-      "recipient": "Oregon Attorney General",
-      "jurisdiction": "Oregon",
-      "description": "Oregon's allocation of the total payment. Permitted uses include attorneys' fees, investigation and litigation costs, consumer protection or privacy enforcement, consumer education or redress, and other uses permitted by state law.",
-      "source_page": 11
-    }
-  ],
+ "financial_provisions": [
+  {
+    "fixture_id": "total_payment",
+    "amount": 200000,
+    "relief_type": "payment to states",
+    "payment_status": "required",
+    "parent_fixture_id": null,
+    "recipient": "Attorneys General of Oregon and Utah",
+    "jurisdiction": "Multistate",
+    "description": "Total payment required by the Assurance.",
+    "source_page": 11
+  },
+  {
+    "fixture_id": "oregon_allocation",
+    "amount": 100000,
+    "relief_type": "Oregon allocation",
+    "payment_status": "allocated",
+    "parent_fixture_id": "total_payment",
+    "recipient": "Oregon Attorney General",
+    "jurisdiction": "Oregon",
+    "description": "Oregon's allocation of the total payment. Permitted uses include attorneys' fees, investigation and litigation costs, consumer protection or privacy enforcement, consumer education or redress, and other uses permitted by state law.",
+    "source_page": 11
+  }
+],
 
   "document": {
     "document_type": "AVC",
