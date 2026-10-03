@@ -1,0 +1,268 @@
+{% extends "base.html" %}
+
+{% block title %}
+{% if avc %}
+    {{ avc.title }} | Oregon AVC Explorer
+{% else %}
+    AVC not found | Oregon AVC Explorer
+{% endif %}
+{% endblock %}
+
+
+{% block content %}
+
+{% if not avc %}
+
+<h1>AVC not found</h1>
+
+<p>
+    We could not find an AVC with that identifier.
+</p>
+
+<p>
+    <a href="/">Return to search</a>
+</p>
+
+{% else %}
+
+<nav aria-label="Breadcrumb">
+    <a href="/">Search</a>
+    <span aria-hidden="true"> / </span>
+    AVC record
+</nav>
+
+
+<header class="record-header">
+
+    <h1>{{ avc.title }}</h1>
+
+    {% if categories %}
+    <ul class="category-list" aria-label="Subject categories">
+        {% for category in categories %}
+        <li>{{ category.name }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+
+</header>
+
+
+<section aria-labelledby="overview-heading">
+
+    <h2 id="overview-heading">Overview</h2>
+
+    <dl class="record-meta">
+
+        <div>
+            <dt>Case number</dt>
+            <dd>{{ avc.case_number or "Not available" }}</dd>
+        </div>
+
+        <div>
+            <dt>Execution date</dt>
+            <dd>{{ avc.execution_date or "Not available" }}</dd>
+        </div>
+
+        <div>
+            <dt>Filing date</dt>
+            <dd>{{ avc.filing_date or "Not available" }}</dd>
+        </div>
+
+        <div>
+            <dt>County</dt>
+            <dd>{{ avc.county or "Not available" }}</dd>
+        </div>
+
+        <div>
+            <dt>Multistate matter</dt>
+            <dd>
+                {% if avc.is_multistate %}
+                    Yes
+                {% else %}
+                    No
+                {% endif %}
+            </dd>
+        </div>
+
+    </dl>
+
+</section>
+
+
+<section aria-labelledby="respondents-heading">
+
+    <h2 id="respondents-heading">Respondents</h2>
+
+    <ul>
+        {% for respondent in respondents %}
+        <li>
+            <strong>{{ respondent.legal_name }}</strong>
+
+            {% if respondent.role %}
+                — {{ respondent.role | replace("_", " ") }}
+            {% endif %}
+        </li>
+        {% endfor %}
+    </ul>
+
+</section>
+
+
+<section aria-labelledby="authorities-heading">
+
+    <h2 id="authorities-heading">Legal authorities</h2>
+
+    <div class="authority-list">
+
+        {% for authority in authorities %}
+
+        <article class="authority">
+
+            <h3>
+                {{ authority.normalized_citation
+                   or authority.citation }}
+            </h3>
+
+            {% if authority.authority_role %}
+            <p>
+                <strong>Role:</strong>
+                {{ authority.authority_role
+                   | replace("_", " ")
+                   | title }}
+            </p>
+            {% endif %}
+
+            {% if authority.citation
+                  != authority.normalized_citation %}
+            <p>
+                <strong>Source citation:</strong>
+                {{ authority.citation }}
+            </p>
+            {% endif %}
+
+            {% if authority.source_page %}
+            <p>
+                Source page {{ authority.source_page }}
+            </p>
+            {% endif %}
+
+        </article>
+
+        {% endfor %}
+
+    </div>
+
+</section>
+
+
+{% if financial_provisions %}
+
+<section aria-labelledby="financial-heading">
+
+    <h2 id="financial-heading">Financial provisions</h2>
+
+    <p>
+        Amounts are shown according to their relationship
+        in the AVC. Allocations and component amounts should
+        not be added to their parent totals.
+    </p>
+
+    <div class="financial-list">
+
+        {% for provision in financial_provisions %}
+
+        <article class="financial-provision">
+
+            <h3>
+                ${{ "{:,.2f}".format(
+                    provision.amount_cents / 100
+                ) }}
+            </h3>
+
+            {% if provision.payment_status %}
+            <p>
+                <strong>Status:</strong>
+                {{ provision.payment_status
+                   | replace("_", " ")
+                   | title }}
+            </p>
+            {% endif %}
+
+            {% if provision.relief_type %}
+            <p>
+                <strong>Type:</strong>
+                {{ provision.relief_type
+                   | replace("_", " ")
+                   | title }}
+            </p>
+            {% endif %}
+
+            {% if provision.recipient %}
+            <p>
+                <strong>Recipient:</strong>
+                {{ provision.recipient }}
+            </p>
+            {% endif %}
+
+            {% if provision.parent_amount_cents %}
+            <p>
+                <strong>Part of:</strong>
+                ${{ "{:,.2f}".format(
+                    provision.parent_amount_cents / 100
+                ) }}
+            </p>
+            {% endif %}
+
+            {% if provision.description %}
+            <p>{{ provision.description }}</p>
+            {% endif %}
+
+        </article>
+
+        {% endfor %}
+
+    </div>
+
+</section>
+
+{% endif %}
+
+
+{% if documents %}
+
+<section aria-labelledby="documents-heading">
+
+    <h2 id="documents-heading">Source documents</h2>
+
+    <p>
+        The original source document is the authoritative
+        record. AVC Explorer provides structured information
+        to assist research and discovery.
+    </p>
+
+    <ul>
+        {% for document in documents %}
+        <li>
+            <a href="{{ document.source_url }}">
+                View original {{ document.document_type }}
+            </a>
+
+            {% if document.publisher %}
+                — {{ document.publisher }}
+            {% endif %}
+        </li>
+        {% endfor %}
+    </ul>
+
+</section>
+
+{% endif %}
+
+
+<p class="back-link">
+    <a href="/">← Search AVCs</a>
+</p>
+
+{% endif %}
+
+{% endblock %}

@@ -1,0 +1,103 @@
+{% extends "base.html" %}
+
+{% block title %}
+Search results | Oregon AVC Explorer
+{% endblock %}
+
+{% block content %}
+
+<h1>Search results</h1>
+
+<form
+    class="search-form"
+    action="/search"
+    method="get"
+    role="search"
+>
+    <label for="search-query">
+        Search AVCs
+    </label>
+
+    <div class="search-controls">
+        <input
+            id="search-query"
+            name="q"
+            type="search"
+            value="{{ query }}"
+            autocomplete="off"
+        >
+
+        <button type="submit">
+            Search
+        </button>
+    </div>
+</form>
+
+{% if results %}
+
+<p class="result-count">
+    {{ results|length }}
+    {% if results|length == 1 %}
+        result
+    {% else %}
+        results
+    {% endif %}
+    for <strong>{{ query }}</strong>
+</p>
+
+<div class="results">
+
+    {% for result in results %}
+
+    <article class="result-card">
+
+        <h2>
+            <a href="/avcs/{{ result.id }}">
+                {{ result.title }}
+            </a>
+        </h2>
+
+        <dl class="result-meta">
+
+            <div>
+                <dt>Date</dt>
+                <dd>
+                    {{ result.execution_date or "Not available" }}
+                </dd>
+            </div>
+
+            <div>
+                <dt>Case number</dt>
+                <dd>
+                    {{ result.case_number or "Not available" }}
+                </dd>
+            </div>
+
+            <div>
+                <dt>Multistate</dt>
+                <dd>
+                    {% if result.is_multistate %}
+                        Yes
+                    {% else %}
+                        No
+                    {% endif %}
+                </dd>
+            </div>
+
+        </dl>
+
+    </article>
+
+    {% endfor %}
+
+</div>
+
+{% else %}
+
+<p class="no-results">
+    No AVCs matched <strong>{{ query }}</strong>.
+</p>
+
+{% endif %}
+
+{% endblock %}

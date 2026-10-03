@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+
+{% block title %}
+Search | Oregon AVC Explorer
+{% endblock %}
+
+{% block content %}
+
+<section class="hero">
+
+    <h1>Search Oregon AVCs</h1>
+
+    <p class="intro">
+        Search Oregon Assurances of Voluntary Compliance by
+        company, statute, case number, or subject.
+    </p>
+
+    <form
+        class="search-form"
+        action="/search"
+        method="get"
+        role="search"
+    >
+        <label for="search-query">
+            Search AVCs
+        </label>
+
+        <div class="search-controls">
+            <input
+                id="search-query"
+                name="q"
+                type="search"
+                autocomplete="off"
+                placeholder="Try Verizon, privacy, or 646.608"
+            >
+
+            <button type="submit">
+                Search
+            </button>
+        </div>
+    </form>
+
+</section>
+
+<section aria-labelledby="about-heading">
+
+    <h2 id="about-heading">
+        What is an AVC?
+    </h2>
+
+    <p>
+        An Assurance of Voluntary Compliance is an agreement
+        used by the Oregon Department of Justice to resolve
+        certain matters without necessarily establishing that
+        the respondent violated the law.
+    </p>
+
+    <p>
+        AVC Explorer organizes information from these public
+        records while preserving links to the original source
+        documents.
+    </p>
+
+</section>
+
+{% endblock %}
