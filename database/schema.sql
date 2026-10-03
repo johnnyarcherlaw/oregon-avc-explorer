@@ -54,6 +54,33 @@ CREATE TABLE respondents (
     parent_entity TEXT
 );
 
+CREATE TABLE avc_respondents (
+    avc_id INTEGER NOT NULL,
+    respondent_id INTEGER NOT NULL,
+    role TEXT DEFAULT 'respondent',
+
+    PRIMARY KEY (avc_id, respondent_id),
+
+    FOREIGN KEY (avc_id) REFERENCES avcs(id),
+    FOREIGN KEY (respondent_id) REFERENCES respondents(id)
+);
+
+
+-- ============================================================
+-- Legal Authorities
+-- Statutes, regulations, etc. referenced by an AVC.
+-- authority_role preserves the legal context in which an
+-- authority appears.
+-- ============================================================
+
+CREATE TABLE legal_authorities (
+    id INTEGER PRIMARY KEY,
+    jurisdiction TEXT,
+    citation TEXT NOT NULL,
+    normalized_citation TEXT,
+    description TEXT
+);
+
 CREATE TABLE avc_legal_authorities (
     avc_id INTEGER NOT NULL,
     legal_authority_id INTEGER NOT NULL,
@@ -68,45 +95,20 @@ CREATE TABLE avc_legal_authorities (
     FOREIGN KEY (legal_authority_id) REFERENCES legal_authorities(id)
 );
 
--- ============================================================
--- Legal Authorities
--- Statutes, regulations, etc. referenced by an AVC.
--- ============================================================
-
-CREATE TABLE legal_authorities (
-    id INTEGER PRIMARY KEY,
-    jurisdiction TEXT,
-    citation TEXT NOT NULL,
-    normalized_citation TEXT,
-    description TEXT
-);
-
-
-CREATE TABLE avc_legal_authorities (
-    avc_id INTEGER NOT NULL,
-    legal_authority_id INTEGER NOT NULL,
-
-    source_text TEXT,
-    source_page INTEGER,
-
-    PRIMARY KEY (avc_id, legal_authority_id),
-
-    FOREIGN KEY (avc_id) REFERENCES avcs(id),
-    FOREIGN KEY (legal_authority_id) REFERENCES legal_authorities(id)
-);
-
 
 -- ============================================================
 -- Financial Provisions
 -- IMPORTANT:
 -- Do not treat every dollar amount as a "penalty."
+-- Child provisions may represent components or allocations of
+-- a parent amount and must not automatically be summed.
 -- ============================================================
 
 CREATE TABLE financial_provisions (
     id INTEGER PRIMARY KEY,
     avc_id INTEGER NOT NULL,
 
-    amount_cents INTEGER NOT NULL
+    amount_cents INTEGER NOT NULL,
 
     relief_type TEXT,
     payment_status TEXT,
@@ -123,6 +125,8 @@ CREATE TABLE financial_provisions (
     FOREIGN KEY (parent_financial_provision_id)
         REFERENCES financial_provisions(id)
 );
+
+
 -- ============================================================
 -- Documents
 -- Original source documents and provenance.
@@ -156,7 +160,6 @@ CREATE TABLE categories (
     name TEXT NOT NULL UNIQUE,
     category_type TEXT
 );
-
 
 CREATE TABLE avc_categories (
     avc_id INTEGER NOT NULL,

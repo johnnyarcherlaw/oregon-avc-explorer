@@ -28,6 +28,7 @@
       "citation": "ORS 646.605–646.656",
       "normalized_citation": "ORS 646.605-646.656",
       "description": "Oregon Unlawful Trade Practices Act",
+      "authority_role": "referenced_law",
       "source_page": 1
     },
     {
@@ -35,6 +36,7 @@
       "citation": "ORS 646.632",
       "normalized_citation": "ORS 646.632",
       "description": "Authority governing assurances of voluntary compliance",
+      "authority_role": "settlement_authority",
       "source_page": 2
     },
     {
@@ -42,6 +44,7 @@
       "citation": "ORS 646A.600 et seq.",
       "normalized_citation": "ORS 646A.600 et seq.",
       "description": "Oregon data breach notification law",
+      "authority_role": "referenced_law",
       "source_page": 3
     },
     {
@@ -49,6 +52,7 @@
       "citation": "Utah Code § 13-44-201",
       "normalized_citation": "Utah Code 13-44-201",
       "description": null,
+      "authority_role": "referenced_law",
       "source_page": 2
     },
     {
@@ -56,6 +60,7 @@
       "citation": "Utah Code § 13-44-202",
       "normalized_citation": "Utah Code 13-44-202",
       "description": "Utah data breach notification law",
+      "authority_role": "referenced_law",
       "source_page": 3
     }
   ],
